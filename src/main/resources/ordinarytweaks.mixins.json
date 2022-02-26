@@ -3,9 +3,20 @@
   "minVersion": "0.8",
   "package": "io.github.maheevil.ordinarytweaks.mixin",
   "compatibilityLevel": "JAVA_16",
+  "plugin": "io.github.maheevil.ordinarytweaks.OrdinaryTweaksMixinPlugin",
   "mixins": [
   ],
   "client": [
+    "BlockEntityWithoutLevelRendererMixin",
+    "ClientPacketListenerMixin",
+    "DeathScreenMixin",
+    "GuiMixin",
+    "ItemInHandRendererMixin",
+    "LocalPlayerMixin",
+    "MultiPlayerGameModeMixin",
+    "SplashManagerMixin",
+    "ToastComponentMixin",
+    "compat.advancementPlaques.AdvancementPlaqueToastGuiMixin"
   ],
   "injectors": {
     "defaultRequire": 1

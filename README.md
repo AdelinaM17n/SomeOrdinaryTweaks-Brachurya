@@ -1,4 +1,4 @@
-# Brachyura Fabric Example Mod
+# SomeOrdinaryTweaks-Brachurya
 
 ## Setup
 
@@ -10,4 +10,4 @@ Run `java -jar brachyura-bootstrap-0.jar build` in the folder.
 
 ## License
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+This project is available under the LGPL-3.0 license.

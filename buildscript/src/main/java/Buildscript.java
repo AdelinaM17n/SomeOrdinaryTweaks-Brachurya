@@ -49,9 +49,14 @@ public class Buildscript extends FabricProject {
 	@Override
 	public void getModDependencies(ModDependencyCollector d) {
 		//d.addMaven(FabricMaven.URL, new MavenId(FabricMaven.GROUP_ID + ".fabric-api", "fabric-api", FABRIC_VERSION + "+" + MC_MAJOR), ModDependencyFlag.RUNTIME, ModDependencyFlag.COMPILE);
-		//d.addMaven("https://maven.terraformersmc.com/releases/",new MavenId("com.terraformersmc:modmenu:3.0.0"), ModDependencyFlag.RUNTIME, ModDependencyFlag.COMPILE);
-		d.add(new JavaJarDependency(getProjectDir().resolve("jarDeps/modmenu-3.0.1.jar").toAbsolutePath(),null,new MavenId("com.terraformersmc:modmenu:3.0.1")), ModDependencyFlag.RUNTIME, ModDependencyFlag.COMPILE);
+		d.addMaven(FabricMaven.URL, new MavenId(FabricMaven.GROUP_ID + ".fabric-api", "fabric-resource-loader-v0", "0.4.11+3ac43d9565"), ModDependencyFlag.RUNTIME, ModDependencyFlag.COMPILE);
+		d.addMaven(FabricMaven.URL, new MavenId(FabricMaven.GROUP_ID + ".fabric-api", "fabric-api-base","0.4.1+b4f4f6cd14"), ModDependencyFlag.RUNTIME, ModDependencyFlag.COMPILE);
+		d.addMaven(FabricMaven.URL, new MavenId(FabricMaven.GROUP_ID + ".fabric-api", "fabric-screen-api-v1", "1.0.4+155f865c18"), ModDependencyFlag.RUNTIME, ModDependencyFlag.COMPILE);
+		d.addMaven("https://maven.terraformersmc.com/releases/",new MavenId("com.terraformersmc:modmenu:3.0.1"), ModDependencyFlag.RUNTIME, ModDependencyFlag.COMPILE);
+		d.addMaven("https://jitpack.io", new MavenId("com.github.Fallen-Breath:conditional-mixin:v0.1.2"),ModDependencyFlag.RUNTIME, ModDependencyFlag.COMPILE, ModDependencyFlag.JIJ);
+		//d.add(new JavaJarDependency(getProjectDir().resolve("jarDeps/modmenu-3.0.1.jar").toAbsolutePath(),null,new MavenId("com.terraformersmc:modmenu:3.0.1")), ModDependencyFlag.RUNTIME, ModDependencyFlag.COMPILE);
 		d.addMaven("https://maven.shedaniel.me/",new MavenId("me.shedaniel.cloth:cloth-config-fabric:6.0.42"), ModDependencyFlag.RUNTIME, ModDependencyFlag.COMPILE);
+		d.addMaven("https://maven.shedaniel.me/",new MavenId("me.shedaniel.cloth:basic-math:0.6.0"), ModDependencyFlag.RUNTIME, ModDependencyFlag.COMPILE);
 
 
 	}
