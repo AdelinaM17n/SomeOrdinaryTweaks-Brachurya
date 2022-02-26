@@ -1,3 +1,4 @@
+import io.github.coolcrabs.brachyura.dependency.JavaJarDependency;
 import io.github.coolcrabs.brachyura.fabric.FabricLoader;
 import io.github.coolcrabs.brachyura.fabric.FabricMaven;
 import io.github.coolcrabs.brachyura.fabric.FabricProject;
@@ -37,7 +38,7 @@ public class Buildscript extends FabricProject {
 
 	@Override
 	public String getModId() {
-		return "fabric-example-mod";
+		return "ordinarytweaks";
 	}
 
 	@Override
@@ -47,6 +48,11 @@ public class Buildscript extends FabricProject {
 
 	@Override
 	public void getModDependencies(ModDependencyCollector d) {
-		d.addMaven(FabricMaven.URL, new MavenId(FabricMaven.GROUP_ID + ".fabric-api", "fabric-api", FABRIC_VERSION + "+" + MC_MAJOR), ModDependencyFlag.RUNTIME, ModDependencyFlag.COMPILE);
+		//d.addMaven(FabricMaven.URL, new MavenId(FabricMaven.GROUP_ID + ".fabric-api", "fabric-api", FABRIC_VERSION + "+" + MC_MAJOR), ModDependencyFlag.RUNTIME, ModDependencyFlag.COMPILE);
+		//d.addMaven("https://maven.terraformersmc.com/releases/",new MavenId("com.terraformersmc:modmenu:3.0.0"), ModDependencyFlag.RUNTIME, ModDependencyFlag.COMPILE);
+		d.add(new JavaJarDependency(getProjectDir().resolve("jarDeps/modmenu-3.0.1.jar").toAbsolutePath(),null,new MavenId("com.terraformersmc:modmenu:3.0.1")), ModDependencyFlag.RUNTIME, ModDependencyFlag.COMPILE);
+		d.addMaven("https://maven.shedaniel.me/",new MavenId("me.shedaniel.cloth:cloth-config-fabric:6.0.42"), ModDependencyFlag.RUNTIME, ModDependencyFlag.COMPILE);
+
+
 	}
 }
