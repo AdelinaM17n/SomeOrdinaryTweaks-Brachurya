@@ -1,0 +1,24 @@
+name: build
+on: [pull_request, push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: |
+            .brachyura
+            ~/.brachyura
+          key: ${{ runner.os }}-brachyura-${{ hashFiles('**/Buildscript.java') }}
+          restore-keys: ${{ runner.os }}-brachyura
+      - uses: actions/setup-java@v2
+        with:
+          java-version: 17
+          distribution: temurin
+      - run: java -jar brachyura-bootstrap-0.jar build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Artifacts
+          path: build/libs/
