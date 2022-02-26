@@ -47,6 +47,11 @@ public class Buildscript extends FabricProject {
 	}
 
 	@Override
+	public int getJavaVersion(){
+		return 17;
+	}
+
+	@Override
 	public void getModDependencies(ModDependencyCollector d) {
 		//d.addMaven(FabricMaven.URL, new MavenId(FabricMaven.GROUP_ID + ".fabric-api", "fabric-api", FABRIC_VERSION + "+" + MC_MAJOR), ModDependencyFlag.RUNTIME, ModDependencyFlag.COMPILE);
 		d.addMaven(FabricMaven.URL, new MavenId(FabricMaven.GROUP_ID + ".fabric-api", "fabric-resource-loader-v0", "0.4.11+3ac43d9565"), ModDependencyFlag.RUNTIME, ModDependencyFlag.COMPILE);

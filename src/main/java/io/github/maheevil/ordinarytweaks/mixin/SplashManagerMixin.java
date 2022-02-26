@@ -23,6 +23,6 @@ public abstract class SplashManagerMixin extends SimplePreparableReloadListener<
             at = @At("TAIL")
     )
     protected void injectAtTail_ToAddSplash(List<String> list, ResourceManager resourceManager, ProfilerFiller profilerFiller, CallbackInfo ci){
-        //this.splashes.addAll(List.of("Trans Rights!","Non-Binary Rights!","The Minecraft bee is trans","[Generic Greeting]","Cone."));
+        this.splashes.addAll(List.of("Trans Rights!","Non-Binary Rights!","The Minecraft bee is trans","[Generic Greeting]","Cone."));
     }
 }
